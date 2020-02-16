@@ -3434,7 +3434,7 @@ MonoBehaviour:
     type: 3}
   badHolePrefab: {fileID: 6487710629500302204, guid: c9aed3a2f19a74ee89a5d710221ba7a2,
     type: 3}
-  golfHolePrefab: {fileID: 1108954581148003717, guid: 0d3848892d0e749d592f0dac9181ceb9,
+  golfHolePrefab: {fileID: 6678914222969697640, guid: 2fbd03b9880e44674abc73e4bcf47364,
     type: 3}
   spawner: []
   badHoles: 16
@@ -4172,9 +4172,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8d06afdbf9dd44b4bd01c467c404f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.4
+  rotationSpeed: 0.5
   zRotator: {fileID: 1804928586}
-  maxRotation: 0.12
+  maxRotation: 0.15
 --- !u!4 &1209877507
 Transform:
   m_ObjectHideFlags: 0
@@ -6925,17 +6925,17 @@ PrefabInstance:
     - target: {fileID: 2165072987503420949, guid: 322f10987e5cc4ca1a129d0d369de9e5,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.1842
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2165072987503420949, guid: 322f10987e5cc4ca1a129d0d369de9e5,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.1842
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2165072987503420949, guid: 322f10987e5cc4ca1a129d0d369de9e5,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.1842
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2905028132085535750, guid: 322f10987e5cc4ca1a129d0d369de9e5,
         type: 3}
