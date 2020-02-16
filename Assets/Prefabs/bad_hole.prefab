@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7805762526942249327}
   - component: {fileID: 1227412413670619993}
   - component: {fileID: 4770486820699244448}
-  - component: {fileID: 2979277358573741445}
+  - component: {fileID: -3861345002775685418}
   m_Layer: 0
   m_Name: bad_hole
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &2979277358573741445
+--- !u!64 &-3861345002775685418
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
