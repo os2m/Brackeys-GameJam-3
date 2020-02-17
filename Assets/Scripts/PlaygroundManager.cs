@@ -22,8 +22,6 @@ public class PlaygroundManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        golfBall.GetComponent<Rigidbody>().useGravity = false;
-
         GameObject[] spawnerArray = GameObject.FindGameObjectsWithTag("Spawner");
         for (int i = 0; i < spawnerArray.Length; i++)
         {
@@ -75,8 +73,6 @@ public class PlaygroundManager : MonoBehaviour
     void Start()
     {
         zRotator.GetComponent<CombineMeshes>().Combine();
-
-        golfBall.GetComponent<Rigidbody>().useGravity = true;
     }
 
     // Update is called once per frame
