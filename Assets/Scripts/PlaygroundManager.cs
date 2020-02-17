@@ -28,23 +28,23 @@ public class PlaygroundManager : MonoBehaviour
             spawner.Add(spawnerArray[i]);
         }
 
-        for (int i = 0; i < badHoles; i++)
-        {
-            int index = Random.Range(0, (spawner.Count - 1));
-
-            GameObject badHole = Instantiate(badHolePrefab, spawner[index].transform.position, Quaternion.Euler(-90f, 0, 0));
-            badHole.transform.SetParent(zRotator);
-
-            spawner.Remove(spawner[index]);
-            Destroy(spawner[index]);
-        }
-
         for (int i = 0; i < golfHoles; i++)
         {
             int index = Random.Range(0, (spawner.Count - 1));
 
             GameObject golfHole = Instantiate(golfHolePrefab, spawner[index].transform.position, Quaternion.Euler(-90f, 0, 0));
             golfHole.transform.SetParent(zRotator);
+
+            spawner.Remove(spawner[index]);
+            Destroy(spawner[index]);
+        }
+
+        for (int i = 0; i < badHoles; i++)
+        {
+            int index = Random.Range(0, (spawner.Count - 1));
+
+            GameObject badHole = Instantiate(badHolePrefab, spawner[index].transform.position, Quaternion.Euler(-90f, 0, 0));
+            badHole.transform.SetParent(zRotator);
 
             spawner.Remove(spawner[index]);
             Destroy(spawner[index]);
