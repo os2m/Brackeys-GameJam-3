@@ -7,6 +7,7 @@ TagManager:
   - Spawner
   - NoCollision
   - Flag
+  - Lock
   layers:
   - Default
   - TransparentFX
