@@ -17,6 +17,7 @@ public class PlaygroundManager : MonoBehaviour
     public Transform zRotator;
     [Space(10)]
     public GameObject golfBall;
+    public Transform[] respawner;
 
 
     // Start is called before the first frame update
