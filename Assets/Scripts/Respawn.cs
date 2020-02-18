@@ -5,6 +5,7 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     public PlaygroundManager manager;
+    public int respawnPoints = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +23,17 @@ public class Respawn : MonoBehaviour
     {
         if (other.CompareTag("Respawn"))
         {
-            int index = Random.Range(0, (manager.respawner.Length - 1));
-
-            transform.position = manager.respawner[index].position;
-            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            RespawnPlayer();
         }
+    }
 
+    public void RespawnPlayer() {
+
+        manager.GetComponent<ScoreManager>().AddScore(respawnPoints);
+
+        int index = Random.Range(0, (manager.respawner.Length - 1));
+
+        transform.position = manager.respawner[index].position;
+        GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
     }
 }

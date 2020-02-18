@@ -13,7 +13,7 @@ public class CombineMeshes : MonoBehaviour
         int i = 0;
         while (i < meshFilters.Length)
         {
-            if (!meshFilters[i].gameObject.CompareTag("NoCollision"))
+            if (!meshFilters[i].gameObject.CompareTag("NoCollision") && !meshFilters[i].gameObject.CompareTag("Flag"))
             {
                 combine[i].mesh = meshFilters[i].sharedMesh;
                 combine[i].transform = meshFilters[i].transform.localToWorldMatrix;

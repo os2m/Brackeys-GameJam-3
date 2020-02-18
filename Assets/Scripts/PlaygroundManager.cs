@@ -18,11 +18,15 @@ public class PlaygroundManager : MonoBehaviour
     [Space(10)]
     public GameObject golfBall;
     public Transform[] respawner;
+    [Space(10)]
+    public GameObject[] flags;
 
 
     // Start is called before the first frame update
     void Awake()
     {
+        flags = new GameObject[golfHoles];
+
         GameObject[] spawnerArray = GameObject.FindGameObjectsWithTag("Spawner");
         for (int i = 0; i < spawnerArray.Length; i++)
         {
@@ -35,9 +39,17 @@ public class PlaygroundManager : MonoBehaviour
 
             GameObject golfHole = Instantiate(golfHolePrefab, spawner[index].transform.position, Quaternion.Euler(-90f, 0, 0));
             golfHole.transform.SetParent(zRotator);
+            flags[i] = golfHole.GetComponentInChildren<Flag>().gameObject;
+            golfHole.GetComponentInChildren<Flag>().manager = this;
 
             spawner.Remove(spawner[index]);
             Destroy(spawner[index]);
+
+            if (i == golfHoles - 1)
+                golfHole.GetComponentInChildren<Flag>().gameObject.SetActive(true);
+            else
+                golfHole.GetComponentInChildren<Flag>().gameObject.SetActive(false);
+
         }
 
         for (int i = 0; i < badHoles; i++)
