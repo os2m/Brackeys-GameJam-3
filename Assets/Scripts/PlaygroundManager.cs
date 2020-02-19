@@ -42,8 +42,9 @@ public class PlaygroundManager : MonoBehaviour
             flags[i] = golfHole.GetComponentInChildren<Flag>().gameObject;
             golfHole.GetComponentInChildren<Flag>().manager = this;
 
-            spawner.Remove(spawner[index]);
-            Destroy(spawner[index]);
+            GameObject current_spawner = spawner[index];
+            spawner.Remove(current_spawner);
+            Destroy(current_spawner);
 
             if (i == golfHoles - 1)
                 golfHole.GetComponentInChildren<Flag>().gameObject.SetActive(true);
@@ -59,8 +60,9 @@ public class PlaygroundManager : MonoBehaviour
             GameObject badHole = Instantiate(badHolePrefab, spawner[index].transform.position, Quaternion.Euler(-90f, 0, 0));
             badHole.transform.SetParent(zRotator);
 
-            spawner.Remove(spawner[index]);
-            Destroy(spawner[index]);
+            GameObject current_spawner = spawner[index];
+            spawner.Remove(current_spawner);
+            Destroy(current_spawner);
         }
 
         for (int i = 0; i < bunkers; i++)
@@ -70,8 +72,9 @@ public class PlaygroundManager : MonoBehaviour
             GameObject bunker = Instantiate(bunkerPrefab, spawner[index].transform.position, Quaternion.Euler(-90f, 0, 0));
             bunker.transform.SetParent(zRotator);
 
-            spawner.Remove(spawner[index]);
-            Destroy(spawner[index]);
+            GameObject current_spawner = spawner[index];
+            spawner.Remove(current_spawner);
+            Destroy(current_spawner);
         }
 
         for (int i = 0; i < spawner.Count; i++)
@@ -79,13 +82,14 @@ public class PlaygroundManager : MonoBehaviour
             GameObject normal = Instantiate(normalPrefab, spawner[i].transform.position, Quaternion.Euler(-90f, 0, 0));
             normal.transform.SetParent(zRotator);
 
-            Destroy(spawner[i]);
+            spawner[i].transform.position = new Vector3(spawner[i].transform.position.x, spawner[i].transform.position.y + .6f, spawner[i].transform.position.z);
         }
     }
 
     void Start()
     {
-        zRotator.GetComponent<CombineMeshes>().Combine();
+        if (zRotator.GetComponent<CombineMeshes>())
+            zRotator.GetComponent<CombineMeshes>().Combine();
     }
 
     // Update is called once per frame

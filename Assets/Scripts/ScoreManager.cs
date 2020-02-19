@@ -18,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreTMP;
     public TMP_Text hScoreTMP;
 
+    public GameObject sound;
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +48,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int toAdd)
     {
+        sound.GetComponent<AudioSource>().Play();
         score += toAdd;
         if (score <= 0)
             score = 0;

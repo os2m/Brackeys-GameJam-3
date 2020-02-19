@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class Respawn : MonoBehaviour
 {
     public PlaygroundManager manager;
@@ -35,5 +36,6 @@ public class Respawn : MonoBehaviour
 
         transform.position = manager.respawner[index].position;
         GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+        GetComponent<AudioSource>().Play();
     }
 }

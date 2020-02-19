@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2905028132085535750
+--- !u!1 &6838206680900115731
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2165072987503420949}
-  - component: {fileID: 7156471416372616227}
-  - component: {fileID: 3489284471548256474}
-  - component: {fileID: 4301562124986040188}
-  - component: {fileID: 1204951770}
-  - component: {fileID: 1214431948}
-  - component: {fileID: 1214431949}
+  - component: {fileID: 7547304437825924864}
+  - component: {fileID: 1578071697416312118}
+  - component: {fileID: 5105646780936301007}
+  - component: {fileID: 8296172669081173156}
+  - component: {fileID: 8296172669081173157}
   m_Layer: 0
-  m_Name: golfball
-  m_TagString: Player
+  m_Name: jumpItem
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2165072987503420949
+--- !u!4 &7547304437825924864
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905028132085535750}
+  m_GameObject: {fileID: 6838206680900115731}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1.8286103, y: 1.8286104, z: 1.8286104}
+  m_LocalScale: {x: 2.4590065, y: 2.4590065, z: 1.5540608}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
---- !u!33 &7156471416372616227
+--- !u!33 &1578071697416312118
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905028132085535750}
-  m_Mesh: {fileID: 289301614986012343, guid: 1f6f10d2e0756468f96fcb540bc00481, type: 3}
---- !u!23 &3489284471548256474
+  m_GameObject: {fileID: 6838206680900115731}
+  m_Mesh: {fileID: 7238664596135999558, guid: 7fa8469369bb74d28b7d7c515935e0ff, type: 3}
+--- !u!23 &5105646780936301007
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905028132085535750}
+  m_GameObject: {fileID: 6838206680900115731}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bbade237c005f49d7aaa0c25d3e40268, type: 2}
+  - {fileID: 8598954236217306308, guid: 7fa8469369bb74d28b7d7c515935e0ff, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,61 +81,29 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &4301562124986040188
-Rigidbody:
+--- !u!65 &8296172669081173156
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905028132085535750}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 0.3
-  m_AngularDrag: 0.3
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
---- !u!135 &1204951770
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905028132085535750}
-  m_Material: {fileID: 13400000, guid: 2824c87fc249d4eb698cdfb562fab5fb, type: 2}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 6838206680900115731}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.06
+  m_Size: {x: 0.19, y: 0.23, z: 1.74}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1214431948
+--- !u!114 &8296172669081173157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905028132085535750}
+  m_GameObject: {fileID: 6838206680900115731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05659474a77c4e7fa4ee7b14d9f4f5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b9a1e5c2c16f430a8ca1d30926b44c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFalling: 1
-  height: 7
-  maxAngularVelocity: 30
---- !u!114 &1214431949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2905028132085535750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3304beceae73495b98f783990b51b7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  respawnPoints: -1
+  coroutine: JumpItem

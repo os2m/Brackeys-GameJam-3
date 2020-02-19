@@ -7,11 +7,14 @@ public class Jump : MonoBehaviour
     public bool isFalling = true;
     public float height = 5f;
     public float maxAngularVelocity = 25f;
+    private ItemManager itemManager;
 
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Rigidbody>().maxAngularVelocity = maxAngularVelocity;
+
+        itemManager = GameObject.FindWithTag("GameController").GetComponent<ItemManager>();
     }
 
     // Update is called once per frame
@@ -19,7 +22,9 @@ public class Jump : MonoBehaviour
     {
         GetComponent<Rigidbody>().maxAngularVelocity = maxAngularVelocity;
 
-        if (Input.GetKeyDown(KeyCode.Space) && !isFalling){
+        if (Input.GetKeyDown(KeyCode.Space) && !isFalling && itemManager.jumps > 0)
+        {
+            itemManager.jumps--;
             GetComponent<Rigidbody>().velocity = new Vector3(GetComponent<Rigidbody>().velocity.x, height, GetComponent<Rigidbody>().velocity.z);
         }
 

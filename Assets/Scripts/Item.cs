@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public ItemManager itemManager;
+    private ItemManager itemManager;
     public string coroutine = "CameraItem";
+    public Vector3 rotateObject;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class Item : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(rotateObject);
     }
 
     private void OnTriggerEnter(Collider other)

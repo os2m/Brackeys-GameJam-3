@@ -23,7 +23,6 @@ public class Flag : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
             manager.GetComponent<ScoreManager>().AddScore(pointsToAdd);
 
             int index = Random.Range(0, (manager.flags.Length -1));
