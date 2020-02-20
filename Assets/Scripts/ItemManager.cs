@@ -48,7 +48,7 @@ public class ItemManager : MonoBehaviour
     public int itemCount = 5;
     private int currentItemCount;
     public GameObject[] items;
-    List<GameObject> spawner;
+
 
     // Start is called before the first frame update
     void Start()
@@ -76,22 +76,34 @@ public class ItemManager : MonoBehaviour
     public void SpawnItems()
     {
         List<GameObject> spawner = new List<GameObject>();
+        currentItemCount = 0;
 
         for (int i = 0; i < GetComponent<PlaygroundManager>().spawner.Count; i++)
         {
-            spawner.Add(GetComponent<PlaygroundManager>().spawner[i]);
+            if (GetComponent<PlaygroundManager>().spawner[i].GetComponentsInChildren<Transform>().Length > 1)
+            {
+                currentItemCount++;
+                if (GetComponent<PlaygroundManager>().spawner[i].GetComponentsInChildren<Transform>().Length > 2)
+                    Destroy(GetComponent<PlaygroundManager>().spawner[i].GetComponentsInChildren<Transform>()[1].gameObject);
+            }
+
+            else
+                spawner.Add(GetComponent<PlaygroundManager>().spawner[i]);
         }
 
-        for (int i = 0; i < itemCount; i++)
+        if (currentItemCount < itemCount)
         {
-            int spawnIndex = Random.Range(0, (spawner.Count));
-            int itemIndex = Random.Range(0, (items.Length));
+            for (int i = 0; i < itemCount - currentItemCount; i++)
+            {
+                int spawnIndex = Random.Range(0, (spawner.Count));
+                int itemIndex = Random.Range(0, (items.Length));
 
-            GameObject item = Instantiate(items[itemIndex], spawner[spawnIndex].transform);
-            item.transform.SetParent(GetComponent<PlaygroundManager>().zRotator);
-            currentItemCount++;
-            spawner.Remove(spawner[spawnIndex]);
+                GameObject item = Instantiate(items[itemIndex], spawner[spawnIndex].transform);
+                item.transform.SetParent(spawner[spawnIndex].transform);
+                currentItemCount++;
+            }
         }
+
     }
 
     public IEnumerator ArrowItem()
