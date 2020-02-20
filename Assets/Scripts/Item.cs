@@ -11,7 +11,8 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        itemManager = GameObject.FindWithTag("GameController").GetComponent<ItemManager>();
+        if (GameObject.FindWithTag("GameController"))
+            itemManager = GameObject.FindWithTag("GameController").GetComponent<ItemManager>();
     }
 
     // Update is called once per frame
@@ -24,7 +25,8 @@ public class Item : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            itemManager.StartCoroutine(coroutine);
+            if (itemManager)
+                itemManager.StartCoroutine(coroutine);
             Destroy(gameObject);
         }
     }

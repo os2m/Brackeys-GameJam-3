@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -17,8 +18,10 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text timeTMP;
     public TMP_Text scoreTMP;
     public TMP_Text hScoreTMP;
+    public TMP_Text endScoreTMP;
 
     public GameObject sound;
+    public GameObject endPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +40,8 @@ public class ScoreManager : MonoBehaviour
         if (CurrentTime <= 0)
         {
             timeText = "NICE JOB";
-            if (score > highScore)
+            endPanel.SetActive(true);
+            endScoreTMP.text = "Cool, you made " + score + " points.";
                 PlayerPrefs.SetInt("HS", score);
         }
 
@@ -52,5 +56,10 @@ public class ScoreManager : MonoBehaviour
         score += toAdd;
         if (score <= 0)
             score = 0;
+    }
+
+    public void LoadScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }
