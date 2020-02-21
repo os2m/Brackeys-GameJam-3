@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
-  pointsToAdd: 3
+  pointsToAdd: 4
 --- !u!82 &707462293492665210
 AudioSource:
   m_ObjectHideFlags: 0

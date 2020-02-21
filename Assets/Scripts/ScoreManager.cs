@@ -23,6 +23,8 @@ public class ScoreManager : MonoBehaviour
     public GameObject sound;
     public GameObject endPanel;
 
+    public GameObject ball;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,8 @@ public class ScoreManager : MonoBehaviour
             timeText = "NICE JOB";
             endPanel.SetActive(true);
             endScoreTMP.text = "Cool, you made " + score + " points.";
-                PlayerPrefs.SetInt("HS", score);
+            PlayerPrefs.SetInt("HS", score);
+            ball.SetActive(false);
         }
 
         timeTMP.text = timeText;

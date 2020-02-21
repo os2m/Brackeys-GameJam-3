@@ -8,6 +8,8 @@ TagManager:
   - NoCollision
   - Flag
   - Lock
+  - donotdestroy
+  - Slider
   layers:
   - Default
   - TransparentFX
